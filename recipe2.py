@@ -19,7 +19,8 @@ import time
 # define logger
 logger = logging.basicConfig(filename='apero-log.txt', level=logging.INFO,
                              format='%(asctime)s | %(levelname)s | %(message)s')
-
+# define sleep time
+SLEEP_TIME = 5
 
 # =============================================================================
 # Define functions
@@ -39,17 +40,18 @@ def main():
     logging.info(msg)
 
     # add a random time component
-    rtime = random.randint(-10, 10)
+    rtime = random.randint(-SLEEP_TIME//2, SLEEP_TIME//2)
     # sleep
-    time.sleep(30 + rtime)
+    time.sleep(SLEEP_TIME + rtime)
 
+    return msg
 
 
 # =============================================================================
 # Start of code
 # =============================================================================
 if __name__ == "__main__":
-    main()
+    _msg = main()
 
 # =============================================================================
 # End of code
