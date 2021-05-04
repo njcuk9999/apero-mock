@@ -25,7 +25,7 @@ NUM_GROUPS = 10
 # define whether this is a test run (just write to file don't run)
 TEST_RUN = False
 # Number of cores (when using multiprocessing)
-NUM_CORES = 10
+NUM_CORES = 20
 # output file name
 RUN_FILE = 'apero-runs.txt'
 # remove previous runs / log file

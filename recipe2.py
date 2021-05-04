@@ -25,16 +25,21 @@ SLEEP_TIME = 5
 # =============================================================================
 # Define functions
 # =============================================================================
-def main():
+def main(group_num=None, run_num=None):
 
     # set up arguments
-    parser = argparse.ArgumentParser(description='This is a mock recipe')
-    parser.add_argument('group_num', nargs=1, type=int)
-    parser.add_argument('run_num', nargs=1, type=int)
-    # get arguments
-    args = parser.parse_args()
-    # print and log message
-    margs = [args.group_num, args.run_num]
+    if group_num is None or run_num is None:
+        # set up arguments
+        parser = argparse.ArgumentParser(description='This is a mock recipe')
+        parser.add_argument('group_num', nargs=1, type=int)
+        parser.add_argument('run_num', nargs=1, type=int)
+        # get arguments
+        args = parser.parse_args()
+        # print and log message
+        margs = [args.group_num, args.run_num]
+    else:
+        margs = [group_num, run_num]
+
     msg = 'RECIPE2: Running group {0} run {1}'.format(*margs)
     print(msg)
     logging.info(msg)
